@@ -13,6 +13,15 @@ namespace Sprzedaj24 {
     public partial class SiteMaster {
         
         /// <summary>
+        /// Kontrolka lbLogin.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbLogin;
+        
+        /// <summary>
         /// Kontrolka MainContent.
         /// </summary>
         /// <remarks>

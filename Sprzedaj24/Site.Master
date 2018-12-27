@@ -51,10 +51,11 @@
                     <a class="navbar-brand" runat="server" href="~/"><b>SPRZEDAJ24</b></a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Strona główna</a></li>
-                        <li><a runat="server" href="~/Category/1">Informacje</a></li>
-                        <li><a runat="server" href="~/Contact">Kontakt</a></li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server"><asp:Label ID="lbLogin" runat="server" ForeColor="White" /></a></li>
+<%--                        <li><a runat="server" href="~/">Strona główna</a></li>--%>
+                        <%--<li><a runat="server" href="~/Category">Informacje</a></li>--%>
+                        <li><a runat="server" class="btn btn-default btn-sm float-right" role="button" href="~/Login">Zaloguj/Zarejestruj</a></li>
                     </ul>
                 </div>
             </div>
