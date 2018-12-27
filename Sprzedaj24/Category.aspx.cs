@@ -26,6 +26,13 @@ namespace Sprzedaj24
             {
                 PokazSciezke();
                 // PokazListeKat();
+                DataSet ds = GetData();
+
+                //GridView1.DataSource = ds;
+                //GridView1.DataBind();
+
+                Repeater1.DataSource = ds;
+                Repeater1.DataBind();
             }
         }
 
@@ -108,6 +115,19 @@ namespace Sprzedaj24
                 conn.Close();
             }
         }
-    }
 
+        private DataSet GetData()
+        {
+            string CS = ConfigurationManager.ConnectionStrings["baza"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Select * from Ogloszenia", con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+
+        }
+
+    }
 }
