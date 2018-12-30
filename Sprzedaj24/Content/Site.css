@@ -18,6 +18,22 @@ textarea {
     max-width: 280px;
 }
 
+table.tdR {
+    display: inline-block; /* this has been added */
+    border-radius: 5px;
+    background-color: #369;
+    color: white;
+    border: 5px solid white;
+}
+
+td.tdR {
+    display: inline-block; /* this has been added */
+    border-radius: 5px;
+    background-color: #369;
+    color: white;
+    border: 5px solid white;
+}
+
 hr.round55 {
     display: block;
     height: 1px;

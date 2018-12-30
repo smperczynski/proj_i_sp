@@ -7,10 +7,10 @@
                 <asp:Label ID="lblSciezka" runat="server" /></h5>
         </div>
     </div>
-        <div class="row">
-        <div class="container">
+    <%--        <div class="row">
+        <div class="container">--%>
     <div class="row">
-        <div class="container">
+        <div class="col-lg-15 col-md-offset-2">
             <table>
                 <tr>
 
@@ -18,51 +18,101 @@
                         <br>
                         <asp:Repeater ID="Repeater1" runat="server">
                             <ItemTemplate>
-                                <table style="border: 1px solid #808080; background-color: #ffffff">
-                                    <tr style="width: 500px">
-                                        <td style="width: 200px">
+                                <table style="border: 1px solid #c1c0c0; background-color: #ffffff">
+                                    <tr style="width: 500px; padding: 10px 10px 10px 10px;">
+
+                                        <td style="width: 350px">
+                                            <h5><b>&nbsp;<%# Eval("Tytul")%></b></h5>
+
                                             <asp:Image ID="imgEmployee"
                                                 ImageUrl='<%# Eval("Sciezka_Foto1")%>'
-                                                runat="server" Width="200px" />
+                                                runat="server" Width="300px" />
                                         </td>
-                                        <td style="width: 500px; padding: 10px 10px 10px 10px;">
+
+                                        <%--                                        <td style="width: 350px">--%>
+                                        <%--                                            <h6><%# Eval("Tytul")%></h6>--%>
+                                        <%--                                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                <!-- Indicators -->
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                </ol>
+
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner">
+                                                    <div class="item active">
+                                                        <img src="<%# Eval("Sciezka_Foto1")%>" alt="Los Angeles" style="width: 100%;">
+                                                    </div>
+
+                                                    <div class="item">
+                                                        <img src="<%# Eval("Sciezka_Foto2")%>" alt="Chicago" style="width: 100%;">
+                                                    </div>
+
+                                                    <div class="item">
+                                                        <img src="<%# Eval("Sciezka_Foto3")%>" alt="New york" style="width: 100%;">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Left and right controls -->
+                                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>--%>
+
+                                        <%--                                        </td>--%>
+
+
+                                        <td style="width: 600px; padding: 10px 10px 10px 10px;">
                                             <table>
+                                                <%--<b><%#Eval("Tytul") %></b><br>--%>
+
+                                                <%--                                                <tr>--%>
+                                                <%--                                            <td>
+                                                <b>
+                                                    <asp:Label ID="lblId"
+                                                        runat="server"
+                                                        Text='<%#Eval("Tytul") %>'>
+                                                    </asp:Label></b><br>
+                                                <br>
+                                            </td>--%>
+                                                <%--                                                </tr>--%>
                                                 <tr>
                                                     <td>
-                                                        <b>Tytuł:</b>
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label ID="lblId"
-                                                            runat="server"
-                                                            Text='<%#Eval("Tytul") %>'>
-                                                        </asp:Label>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b>Opis:</b>
+                                                        <b>Opis:</b><br>
+                                                        <br>
                                                     </td>
                                                     <td>
                                                         <asp:Label ID="lblName"
                                                             runat="server"
                                                             Text='<%#Eval("Opis") %>'>
-                                                        </asp:Label>
+                                                        </asp:Label><br>
+                                                        <br>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <b>Telefon:</b>
+                                                        <b>Kontakt:</b>
+                                                        <br>
+                                                        <br>
                                                     </td>
                                                     <td>
                                                         <asp:Label ID="lblGender"
                                                             runat="server"
                                                             Text='<%#Eval("Telefon") %>'>
                                                         </asp:Label>
+                                                        <br>
+                                                        <br>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <b>City:</b>
+                                                        <b>Lokalizacja:</b>
                                                     </td>
                                                     <%--                                <td>
                                     <asp:Label ID="lblCity" 
@@ -77,9 +127,7 @@
                                 </table>
                             </ItemTemplate>
                             <SeparatorTemplate>
-                                <asp:Image ID="Image1"
-                                    ImageUrl="~/Images/1x1PixelImage.png"
-                                    runat="server" />
+                                <br>
                             </SeparatorTemplate>
                         </asp:Repeater>
                     </td>

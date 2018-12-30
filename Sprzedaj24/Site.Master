@@ -64,7 +64,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <footer class="col-lg-15 col-md-offset-3">
                 <p>Sebastian Perczyński - Praca inżynierska - Serwis ogłoszeniowy przy użyciu platformy ASP.NET</p>
             </footer>
         </div>

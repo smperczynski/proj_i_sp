@@ -25,14 +25,11 @@ namespace Sprzedaj24
             else if (Int32.Parse(id) > 0)
             {
                 PokazSciezke();
-                // PokazListeKat();
-                DataSet ds = GetData();
+                PokazListeKat();
+                //DataSet ds = GetData();
 
-                //GridView1.DataSource = ds;
-                //GridView1.DataBind();
-
-                Repeater1.DataSource = ds;
-                Repeater1.DataBind();
+                //Repeater1.DataSource = ds;
+                //Repeater1.DataBind();
             }
         }
 
@@ -63,6 +60,7 @@ namespace Sprzedaj24
 
                 //Label lblResult = ((Label)ResultsPanel.FindControl(lbl));
 
+
                 if (reader.Read())
                 {
                     lblSciezka.Text += reader["Sciezka"].ToString();
@@ -88,23 +86,43 @@ namespace Sprzedaj24
             //lab1.Text = "<h4><font color=#ffff1a>test</h4></font>";
             try
             {
-                string query = @" ";
+                string query = @"SELECT * FROM Ogloszenia WHERE KategoriaId=@Id";
 
+                //DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand(query, conn);
-                //cmd.Parameters.AddWithValue("@Id", i);
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                // string lbl = "label" + i;
+                cmd.Parameters.AddWithValue("@Id", id);
+                SqlDataAdapter ad = new SqlDataAdapter();
+                ad.SelectCommand = cmd;
+                ad.Fill(ds);
+
+                Repeater1.DataSource = ds;
+                Repeater1.DataBind();
+
+
+                //SqlCommand cmd = new SqlCommand(query, conn);
+                ////cmd.Parameters.AddWithValue("@Id", i);
+                //conn.Open();
+                //SqlDataReader reader = cmd.ExecuteReader();
+                //// string lbl = "label" + i;
+
+                //using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
+                //{
+                //    adapter.Fill(ds);
+                //}
 
                 //Control myControl1 = (Label)FindControl(lbl.ToString());
 
+                //GridView1.DataSource = ds;
+                //GridView1.DataBind();
+                //ad.Fill(ds);
+
                 //Label lblResult = ((Label)ResultsPanel.FindControl(lbl));
 
-                while (reader.Read())
-                {
-                    //lblNaglowek.Text += reader["Kat"].ToString();
-                }
-                reader.Close();
+                //while (reader.Read())
+                //{
+                //    //lblNaglowek.Text += reader["Kat"].ToString();
+                //}
+                //reader.Close();
             }
             catch (Exception ex)
             {
@@ -116,18 +134,24 @@ namespace Sprzedaj24
             }
         }
 
-        private DataSet GetData()
-        {
-            string CS = ConfigurationManager.ConnectionStrings["baza"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(CS))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("Select * from Ogloszenia", con);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                return ds;
-            }
+        //private DataSet GetData()
+        //{
+        //    string CS = ConfigurationManager.ConnectionStrings["baza"].ConnectionString;
 
-        }
+        //    string lbl = "lblSlider";
+        //    Control myControl1 = (Label)FindControl(lbl.ToString());
+
+        //    Label lblResult = ((Label)Repeater1.FindControl(lbl));
+
+        //    using (SqlConnection con = new SqlConnection(CS))
+        //    {
+        //        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Ogloszenia", con);
+        //        DataSet ds = new DataSet();
+        //        da.Fill(ds);
+        //        return ds;
+        //    }
+
+        //}
 
     }
 }
