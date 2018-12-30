@@ -43,10 +43,12 @@ namespace Sprzedaj24
             {
                 string query = @"SELECT UPPER(m3.Nazwa)
                                  +' <span class=""glyphicon glyphicon-menu-right""></span> '
-                                     + UPPER(m2.Nazwa) + ' <span class=""glyphicon glyphicon-menu-right""></span> '
-                                     + UPPER(m1.Nazwa) AS Sciezka FROM
-                                      menu m1
-                                      JOIN menu m2 ON m1.ParentId = m2.MenuId
+                                 + UPPER(m2.Nazwa) + ' <span class=""glyphicon glyphicon-menu-right""></span> '
+                                 + UPPER(m1.Nazwa) AS Sciezka,
+	                             UPPER(m1.Nazwa) AS Nazwa
+                                 FROM
+                                 menu m1
+                                 JOIN menu m2 ON m1.ParentId = m2.MenuId
                                  JOIN menu m3 ON m2.ParentId = m3.MenuId
                                  WHERE m1.menuid = @Id";
 
@@ -64,6 +66,7 @@ namespace Sprzedaj24
                 if (reader.Read())
                 {
                     lblSciezka.Text += reader["Sciezka"].ToString();
+                    this.Title = reader["Nazwa"].ToString();
                 }
                 reader.Close();
             }

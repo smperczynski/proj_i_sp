@@ -22,6 +22,15 @@ namespace Sprzedaj24 {
         protected global::System.Web.UI.WebControls.Label lblSciezka;
         
         /// <summary>
+        /// Kontrolka btnNoweOgl.
+        /// </summary>
+        /// <remarks>
+        /// Pole generowane automatycznie.
+        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNoweOgl;
+        
+        /// <summary>
         /// Kontrolka Repeater1.
         /// </summary>
         /// <remarks>

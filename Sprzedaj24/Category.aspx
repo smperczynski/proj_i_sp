@@ -1,10 +1,18 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="Sprzedaj24.Category" %>
+﻿<%@Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="Sprzedaj24.Category" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
     <div class="row">
         <div class="container">
             <h5>
                 <asp:Label ID="lblSciezka" runat="server" /></h5>
+
+            <asp:LinkButton ID="btnNoweOgl"
+                runat="server" PostBackUrl="~/Default.aspx"
+                CssClass="btn btn-success">
+            <span aria-hidden="true" class="glyphicon glyphicon-plus"></span> Nowe ogłoszenie
+            </asp:LinkButton>
+
         </div>
     </div>
     <%--        <div class="row">
