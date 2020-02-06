@@ -1,0 +1,146 @@
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Sprzedaj24.dll.config
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Sprzedaj24.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Sprzedaj24.pdb
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\csc.exe
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\csc.exe.config
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\csc.rsp
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\csi.exe
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\csi.exe.config
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\csi.rsp
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.AppContext.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Console.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.IO.Compression.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.IO.Pipes.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Security.Claims.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.ValueTuple.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\vbc.exe
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\vbc.exe.config
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\vbc.rsp
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\VBCSCompiler.exe
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Antlr3.Runtime.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Newtonsoft.Json.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\System.Web.Optimization.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\WebGrease.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\System.Web.Optimization.xml
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Newtonsoft.Json.xml
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Antlr3.Runtime.pdb
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\pl\System.Web.Optimization.resources.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\bin\pl\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\obj\Debug\Sprzedaj24.csprojAssemblyReference.cache
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\obj\Debug\Sprzedaj24.csproj.CoreCompileInputs.cache
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\obj\Debug\Sprzedaj24.csproj.CopyComplete
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\obj\Debug\Sprzedaj24.dll
+C:\Users\SMP\Documents\Projekty\Sprzedaj24\Sprzedaj24\obj\Debug\Sprzedaj24.pdb
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Sprzedaj24.dll.config
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Sprzedaj24.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Sprzedaj24.pdb
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\csc.exe
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\csc.exe.config
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\csc.rsp
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\csi.exe
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\csi.exe.config
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\csi.rsp
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.AppContext.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Console.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.IO.Compression.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.IO.Pipes.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Security.Claims.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.ValueTuple.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\vbc.exe
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\vbc.exe.config
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\vbc.rsp
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\VBCSCompiler.exe
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Antlr3.Runtime.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Newtonsoft.Json.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\System.Web.Optimization.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\WebGrease.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\System.Web.Optimization.xml
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Newtonsoft.Json.xml
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Antlr3.Runtime.pdb
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\pl\System.Web.Optimization.resources.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\bin\pl\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\obj\Debug\Sprzedaj24.csprojAssemblyReference.cache
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\obj\Debug\Sprzedaj24.csproj.CoreCompileInputs.cache
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\obj\Debug\Sprzedaj24.csproj.CopyComplete
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\obj\Debug\Sprzedaj24.dll
+C:\Users\SMP\Documents\Projekty\sp24 git\proj_i_sp\Sprzedaj24\obj\Debug\Sprzedaj24.pdb
