@@ -9,9 +9,9 @@
             <div class="form-group">
                 Login:
     <br>
-                <asp:TextBox ID="tbLogin" ValidationGroup="vgLogin" class="form-control" runat="server" />
+                <asp:TextBox ID="tbxLogin" ValidationGroup="vgLogin" class="form-control" runat="server" />
                 <asp:RequiredFieldValidator ID="valLogin"
-                    ControlToValidate="tbLogin" ForeColor="Red" Display="Dynamic"
+                    ControlToValidate="tbxLogin" ForeColor="Red" Display="Dynamic"
                     ValidationGroup="vgLogin" Font-Size="X-Small"
                     ErrorMessage="Wprowadź login"
                     runat="server">
@@ -19,9 +19,9 @@
                 <br>
                 Hasło:
     <br>
-                <asp:TextBox ID="tbPassword" ValidationGroup="vgLogin" class="form-control" runat="server" />
+                <asp:TextBox ID="tbxPassword" TextMode="Password" ValidationGroup="vgLogin" class="form-control" runat="server" />
                 <asp:RequiredFieldValidator ID="valPassword"
-                    ControlToValidate="tbPassword" ForeColor="Red"
+                    ControlToValidate="tbxPassword" ForeColor="Red"
                     ValidationGroup="vgLogin" Font-Size="X-Small"
                     ErrorMessage="Wprowadź hasło"
                     runat="server">
@@ -29,20 +29,21 @@
 
                 <div id="divRegister" runat="server" visible="false">
                     E-mail:
-                    <asp:TextBox ID="tbEmail" ValidationGroup="vgEmail" class="form-control" runat="server" />
+                    <asp:TextBox ID="tbxEmail" TextMode="Email" ValidationGroup="vgEmail" class="form-control" runat="server" />
                     <asp:RequiredFieldValidator ID="valEmail"
-                        ControlToValidate="tbEmail" ForeColor="Red"
+                        ControlToValidate="tbxEmail" ForeColor="Red"
                         ValidationGroup="vgLogin" Font-Size="X-Small"
                         ErrorMessage="Wprowadź adres e-mail"
                         runat="server">
                     </asp:RequiredFieldValidator>
                 </div>
-
+                <br />
+                <asp:Label ID="lblError" ForeColor="Red" Visible="false" runat="server"/>
                 <br />
                 <asp:Button ID="btnLogin" ValidationGroup="vgLogin" OnClick="btnLogin_Click" runat="server" class="btn btn-primary" Text="Zaloguj" />
                 <br>
                 <br>
-                <a href="/Login?go=registration">Nie posiadasz jeszcze konta?</a>
+                <a id="hlReg" runat="server" href="/Login?go=registration">Nie posiadasz jeszcze konta? Zarejestruj się >></a>
             </div>
         </div>
     </div>

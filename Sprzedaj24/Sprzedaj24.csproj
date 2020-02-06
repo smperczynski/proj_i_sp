@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NewAdv.aspx" />
     <Content Include="Category.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="Login.aspx" />
@@ -162,6 +163,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="NewAdv.aspx.cs">
+      <DependentUpon>NewAdv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewAdv.aspx.designer.cs">
+      <DependentUpon>NewAdv.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

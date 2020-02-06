@@ -15,7 +15,6 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
 <body>
     <form runat="server">
@@ -45,17 +44,27 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/"><b>SPRZEDAJ24</b></a>
                 </div>
+
                 <div class="navbar-collapse collapse">
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server"><asp:Label ID="lbLogin" runat="server" ForeColor="White" /></a></li>
-<%--                        <li><a runat="server" href="~/">Strona główna</a></li>--%>
-                        <%--<li><a runat="server" href="~/Category">Informacje</a></li>--%>
-                        <li><a runat="server" class="btn btn-default btn-sm float-right" role="button" href="~/Login">Zaloguj/Zarejestruj</a></li>
+                        <li>
+                            <asp:HyperLink ID="hlLogin" Visible="false" runat="server" class="btn btn-default btn-sm float-right" role="button" href="Login.aspx" Text="Zaloguj / Zarejestruj"></asp:HyperLink>
+                        </li>
+                        <li>
+                            <div id="divAccount" visible="false" runat="server" class="dropdown">
+                                <button id="ddLogin" runat="server" class="btn btn-default dropdown-toggle" style="padding: 15px" type="button" data-toggle="dropdown"></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="UserAdv.aspx"><span class="glyphicon glyphicon-book"></span>&nbsp Twoje ogłoszenia</a></li>
+                                    <li><a href="EditProfile.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp Edytuj dane</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="Logout.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp Wyloguj</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

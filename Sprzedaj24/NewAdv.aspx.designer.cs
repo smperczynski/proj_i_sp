@@ -10,123 +10,114 @@
 namespace Sprzedaj24 {
     
     
-    public partial class _Default {
+    public partial class NewAdv {
         
         /// <summary>
-        /// ResultsPanel control.
+        /// lblBreadCrumbs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel ResultsPanel;
+        protected global::System.Web.UI.WebControls.Label lblBreadCrumbs;
         
         /// <summary>
-        /// lbl1 control.
+        /// tbxTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl1;
+        protected global::System.Web.UI.WebControls.TextBox tbxTitle;
         
         /// <summary>
-        /// lbl2 control.
+        /// tbxDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl2;
+        protected global::System.Web.UI.WebControls.TextBox tbxDescription;
         
         /// <summary>
-        /// lbl3 control.
+        /// tbxCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl3;
+        protected global::System.Web.UI.WebControls.TextBox tbxCity;
         
         /// <summary>
-        /// lbl4 control.
+        /// tbxPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl4;
+        protected global::System.Web.UI.WebControls.TextBox tbxPhoneNumber;
         
         /// <summary>
-        /// lbl5 control.
+        /// FileUploadControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl5;
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadControl;
         
         /// <summary>
-        /// lbl6 control.
+        /// imgUpload0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl6;
+        protected global::System.Web.UI.WebControls.Image imgUpload0;
         
         /// <summary>
-        /// lbl7 control.
+        /// imgUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl7;
+        protected global::System.Web.UI.WebControls.Image imgUpload1;
         
         /// <summary>
-        /// lbl8 control.
+        /// imgUpload2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl8;
+        protected global::System.Web.UI.WebControls.Image imgUpload2;
         
         /// <summary>
-        /// lbl9 control.
+        /// imgUpload3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl9;
+        protected global::System.Web.UI.WebControls.Image imgUpload3;
         
         /// <summary>
-        /// lbl10 control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl10;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// lbl11 control.
+        /// btnSaveAdv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl11;
-        
-        /// <summary>
-        /// lbl12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl12;
+        protected global::System.Web.UI.WebControls.LinkButton btnSaveAdv;
     }
 }

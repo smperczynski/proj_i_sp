@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Sprzedaj24
 {
@@ -11,7 +7,24 @@ namespace Sprzedaj24
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string userLogin = Session["Login"] != null ? Session["Login"].ToString() : "";
+            SprawdzLogin(userLogin);
+        }
 
+        protected void SprawdzLogin(string userLogin)
+        {
+            if (!string.IsNullOrEmpty(userLogin))
+            {
+                ddLogin.InnerHtml = $"Zalogowany jako: <b>{userLogin}</b> <span class='caret'/>";
+                hlLogin.Visible = false;
+                divAccount.Visible = true;
+            }
+            else
+            {
+                ddLogin.InnerHtml = "";
+                hlLogin.Visible = true;
+                divAccount.Visible = false;
+            }
         }
     }
 }

@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Sprzedaj24
 {
     public partial class Category : Page
     {
-        public static string baza = ConfigurationManager.ConnectionStrings["baza"].ConnectionString;
+        public static string db = ConfigurationManager.ConnectionStrings["db_Sprzedaj24"].ConnectionString;
         String id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            id = Request.QueryString["id"];
+            id = Request.QueryString["Id"];
 
             if (String.IsNullOrEmpty(id) || Int32.Parse(id) < 1)
             {
@@ -24,28 +20,23 @@ namespace Sprzedaj24
             }
             else if (Int32.Parse(id) > 0)
             {
-                PokazSciezke();
-                PokazListeKat();
-                //DataSet ds = GetData();
-
-                //Repeater1.DataSource = ds;
-                //Repeater1.DataBind();
+                LoadBreadCrumbs();
+                ShowAdvertisements();
             }
         }
 
-        protected void PokazSciezke()
+        protected void LoadBreadCrumbs()
         {
-            SqlConnection conn = new SqlConnection(baza);
+            SqlConnection conn = new SqlConnection(db);
             DataSet ds = new DataSet();
 
-            //lab1.Text = "<h4><font color=#ffff1a>test</h4></font>";
             try
             {
-                string query = @"SELECT UPPER(m3.Nazwa)
+                string query = @"SELECT UPPER(m3.Name)
                                  +' <span class=""glyphicon glyphicon-menu-right""></span> '
-                                 + UPPER(m2.Nazwa) + ' <span class=""glyphicon glyphicon-menu-right""></span> '
-                                 + UPPER(m1.Nazwa) AS Sciezka,
-	                             UPPER(m1.Nazwa) AS Nazwa
+                                 + UPPER(m2.Name) + ' <span class=""glyphicon glyphicon-menu-right""></span> '
+                                 + UPPER(m1.Name) AS Path,
+	                             UPPER(m1.Name) AS Name
                                  FROM
                                  menu m1
                                  JOIN menu m2 ON m1.ParentId = m2.MenuId
@@ -56,17 +47,11 @@ namespace Sprzedaj24
                 cmd.Parameters.AddWithValue("@Id", Int32.Parse(id));
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                // string lbl = "label" + i;
-
-                //Control myControl1 = (Label)FindControl(lbl.ToString());
-
-                //Label lblResult = ((Label)ResultsPanel.FindControl(lbl));
-
 
                 if (reader.Read())
                 {
-                    lblSciezka.Text += reader["Sciezka"].ToString();
-                    this.Title = reader["Nazwa"].ToString();
+                    lblBreadCrumbs.Text += reader["Path"].ToString();
+                    this.Title = reader["Name"].ToString();
                 }
                 reader.Close();
             }
@@ -80,52 +65,27 @@ namespace Sprzedaj24
             }
         }
 
-        protected void PokazListeKat()
+        protected void ShowAdvertisements()
         {
-            //lblNaglowek.Text = "Róźne -> Kupię -> Obrazy";
-            SqlConnection conn = new SqlConnection(baza);
+            SqlConnection conn = new SqlConnection(db);
             DataSet ds = new DataSet();
 
-            //lab1.Text = "<h4><font color=#ffff1a>test</h4></font>";
             try
             {
-                string query = @"SELECT * FROM Ogloszenia WHERE KategoriaId=@Id";
+                string query = @"SELECT a.Title, a.Description, a.PhoneNumber, a.City, '/Upload/' + ap.PhotoPath AS PhotoPath
+                                 FROM Advertisements a
+                                 JOIN AdvertisementsPhotos ap ON a.AdvertisementId = ap.AdvertisementId
+                                 WHERE a.CategoryId = @CategoryId AND ap.PhotoNumber = 1
+                                 ORDER BY Created DESC";
 
-                //DataSet ds = new DataSet();
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@CategoryId", id);
                 SqlDataAdapter ad = new SqlDataAdapter();
                 ad.SelectCommand = cmd;
                 ad.Fill(ds);
 
-                Repeater1.DataSource = ds;
-                Repeater1.DataBind();
-
-
-                //SqlCommand cmd = new SqlCommand(query, conn);
-                ////cmd.Parameters.AddWithValue("@Id", i);
-                //conn.Open();
-                //SqlDataReader reader = cmd.ExecuteReader();
-                //// string lbl = "label" + i;
-
-                //using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
-                //{
-                //    adapter.Fill(ds);
-                //}
-
-                //Control myControl1 = (Label)FindControl(lbl.ToString());
-
-                //GridView1.DataSource = ds;
-                //GridView1.DataBind();
-                //ad.Fill(ds);
-
-                //Label lblResult = ((Label)ResultsPanel.FindControl(lbl));
-
-                //while (reader.Read())
-                //{
-                //    //lblNaglowek.Text += reader["Kat"].ToString();
-                //}
-                //reader.Close();
+                rptAdv.DataSource = ds;
+                rptAdv.DataBind();
             }
             catch (Exception ex)
             {
@@ -137,24 +97,9 @@ namespace Sprzedaj24
             }
         }
 
-        //private DataSet GetData()
-        //{
-        //    string CS = ConfigurationManager.ConnectionStrings["baza"].ConnectionString;
-
-        //    string lbl = "lblSlider";
-        //    Control myControl1 = (Label)FindControl(lbl.ToString());
-
-        //    Label lblResult = ((Label)Repeater1.FindControl(lbl));
-
-        //    using (SqlConnection con = new SqlConnection(CS))
-        //    {
-        //        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Ogloszenia", con);
-        //        DataSet ds = new DataSet();
-        //        da.Fill(ds);
-        //        return ds;
-        //    }
-
-        //}
-
+        protected void btnNoweOgl_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"~/NewAdv.aspx?id={Int32.Parse(id)}");
+        }
     }
 }

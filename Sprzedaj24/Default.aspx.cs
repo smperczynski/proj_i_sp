@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -12,97 +9,52 @@ namespace Sprzedaj24
 {
     public partial class _Default : Page
     {
-        public static string baza = ConfigurationManager.ConnectionStrings["baza"].ConnectionString;
+        public static string db = ConfigurationManager.ConnectionStrings["db_Sprzedaj24"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            PokazKategorie();
+            ShowCategories();
         }
 
-        protected void PokazKategorie()
+        protected void ShowCategories()
         {
-            SqlConnection conn = new SqlConnection(baza);
+            SqlConnection conn = new SqlConnection(db);
             DataSet ds = new DataSet();
 
-            //lab1.Text = "<h4><font color=#ffff1a>test</h4></font>";
             for (int i = 1; i < 13; i++)
             {
                 try
                 {
-                    //string query = @"create table #Temp
-                    //             (
-                    //                 Nag varchar(500), 
-                    //                 MenuId int, 
-                    //                 ParentId int, 
-                    //                 Kat varchar(500)
-                    //             )
-
-                    //             Insert Into #Temp
-                    //             SELECT
-                    //             '<h4>'+n.Nazwa+'</h4>' AS Nag,
-                    //             m.MenuId, 
-                    //             m.ParentId,
-                    //             CASE WHEN m.ParentId IN (SELECT menuid FROM menu WHERE ParentId IS NULL) AND m.ParentId IS NOT NULL THEN '<b>'+ m.Nazwa + '</b><br/>'
-                    //             ELSE m.Nazwa +'<br/>'
-                    //             END as Kat
-                    //             FROM menu m
-                    //             JOIN (SELECT * FROM menu WHERE ParentId IS NULL) n ON n.MenuId=m.ParentId
-                    //             WHERE m.ParentId IS NOT NULL AND m.ParentId=@Id
-                    //             -------------------------------------------
-                    //             SELECT --m2.parentid pp, 
-                    //             t.Kat + REPLACE(STUFF((
-                    //             SELECT ';' + m1.Nazwa
-                    //             --t.Kat + ' ' + m.Nazwa
-                    //             --t.Kat, 
-                    //             FROM menu m1 
-                    //             JOIN #Temp t ON t.MenuId=m1.ParentId
-                    //             WHERE m1.parentid = m2.parentid
-                    //             --WHERE t.ParentId=1
-                    //             FOR XML PATH ('')
-                    //                         ), 1, 1, ''),';','<br/>') + '<br/>' AS Kat
-                    //             FROM menu m2 
-                    //             JOIN #Temp t ON t.MenuId=m2.ParentId 
-                    //             group by m2.parentid, t.Kat
-
-
-                    //             --SELECT
-                    //             --t.*,m.*
-                    //             --FROM menu m 
-                    //             --JOIN #Temp t ON t.MenuId=m.ParentId
-                    //             -------------------------------------------
-
-                    //             DROP TABLE #Temp";
-
                     string query = @"create table #Temp
                                      (
                                          Nag varchar(500), 
                                          MenuId int, 
                                          ParentId int, 
-                                         Kat varchar(500)
+                                         Category varchar(500)
                                      )
                                      
-                                     Insert Into #Temp
+                                     INSERT INTO #Temp
                                      SELECT
-                                     '<h4>'+n.Nazwa+'</h4>' AS Nag,
+                                     '<h4>'+n.Name+'</h4>' AS Nag,
                                      m.MenuId, 
                                      m.ParentId,
-                                     CASE WHEN m.ParentId IN (SELECT menuid FROM menu WHERE ParentId IS NULL) AND m.ParentId IS NOT NULL THEN '<b>'+ m.Nazwa + '</b><br>'
-                                     ELSE m.Nazwa +'<br>'
-                                     END as Kat
+                                     CASE WHEN m.ParentId IN (SELECT menuid FROM menu WHERE ParentId IS NULL) AND m.ParentId IS NOT NULL THEN '<b>'+ m.Name + '</b><br>'
+                                     ELSE m.Name +'<br>'
+                                     END as Category
                                      FROM menu m
                                      JOIN (SELECT * FROM menu WHERE ParentId IS NULL) n ON n.MenuId=m.ParentId
                                      WHERE m.ParentId IS NOT NULL AND m.ParentId=@Id
                                      
                                      SELECT 
-                                     t.Kat + REPLACE(REPLACE(REPLACE(STUFF((
-                                     SELECT ';' + '!' + m1.Link + '$' + m1.Nazwa + ''
+                                     t.Category + REPLACE(REPLACE(REPLACE(STUFF((
+                                     SELECT ';' + '!' + m1.Link + '$' + m1.Name + ''
                                      FROM menu m1 
                                      JOIN #Temp t ON t.MenuId=m1.ParentId
                                      WHERE m1.parentid = m2.parentid
                                      FOR XML PATH ('')
-                                                 ), 1, 1, ''),';','</a><br/>'),'!','<a runat=""server"" href='),'$','>') + '</a><br/>' AS Kat
+                                                 ), 1, 1, ''),';','</a><br/>'),'!','<a runat=""server"" href='),'$','>') + '</a><br/>' AS Category
                                      FROM menu m2
                                      JOIN #Temp t ON t.MenuId=m2.ParentId 
-                                     group by m2.parentid, t.Kat
+                                     GROUP BY m2.parentid, t.Category
                                      
                                      DROP TABLE #Temp";
 
@@ -110,7 +62,7 @@ namespace Sprzedaj24
                     cmd.Parameters.AddWithValue("@Id", i);
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
-                    string lbl = "label" + i;
+                    string lbl = "lbl" + i;
 
                     Control myControl1 = (Label)FindControl(lbl.ToString());
 
@@ -118,7 +70,7 @@ namespace Sprzedaj24
 
                     while (reader.Read())
                     {
-                        lblResult.Text += reader["Kat"].ToString();
+                        lblResult.Text += reader["Category"].ToString();
                     }
                     reader.Close();
                 }

@@ -1,16 +1,16 @@
-﻿<%@Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="Sprzedaj24.Category" %>
+﻿<%@  Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="Sprzedaj24.Category" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
         <div class="container">
             <h5>
-                <asp:Label ID="lblSciezka" runat="server" /></h5>
+                <asp:Label ID="lblBreadCrumbs" runat="server" /></h5>
 
             <asp:LinkButton ID="btnNoweOgl"
-                runat="server" PostBackUrl="~/Default.aspx"
-                CssClass="btn btn-success">
-            <span aria-hidden="true" class="glyphicon glyphicon-plus"></span> Nowe ogłoszenie
+                runat="server" OnClick="btnNoweOgl_Click"
+                CssClass="btn btn-success" Style="float: right">
+            <span aria-hidden="true" class="glyphicon glyphicon-plus"></span> Dodaj ogłoszenie
             </asp:LinkButton>
 
         </div>
@@ -21,19 +21,18 @@
         <div class="col-lg-15 col-md-offset-2">
             <table>
                 <tr>
-
                     <td>
                         <br>
-                        <asp:Repeater ID="Repeater1" runat="server">
+                        <asp:Repeater ID="rptAdv" runat="server">
                             <ItemTemplate>
                                 <table style="border: 1px solid #c1c0c0; background-color: #ffffff">
                                     <tr style="width: 500px; padding: 10px 10px 10px 10px;">
 
                                         <td style="width: 350px">
-                                            <h5><b>&nbsp;<%# Eval("Tytul")%></b></h5>
+                                            <h5><b>&nbsp;<%# Eval("Title")%></b></h5>
 
                                             <asp:Image ID="imgEmployee"
-                                                ImageUrl='<%# Eval("Sciezka_Foto1")%>'
+                                                ImageUrl='<%# Eval("PhotoPath")%>'
                                                 runat="server" Width="300px" />
                                         </td>
 
@@ -98,21 +97,21 @@
                                                     <td>
                                                         <asp:Label ID="lblName"
                                                             runat="server"
-                                                            Text='<%#Eval("Opis") %>'>
+                                                            Text='<%#Eval("Description") %>'>
                                                         </asp:Label><br>
                                                         <br>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <b>Kontakt:</b>
+                                                        <b>Nr telefonu:</b>
                                                         <br>
                                                         <br>
                                                     </td>
                                                     <td>
                                                         <asp:Label ID="lblGender"
                                                             runat="server"
-                                                            Text='<%#Eval("Telefon") %>'>
+                                                            Text='<%#Eval("PhoneNumber") %>'>
                                                         </asp:Label>
                                                         <br>
                                                         <br>
@@ -122,12 +121,12 @@
                                                     <td>
                                                         <b>Lokalizacja:</b>
                                                     </td>
-                                                    <%--                                <td>
-                                    <asp:Label ID="lblCity" 
-                                    runat="server" 
-                                    Text='<%#Eval("City") %>'>
-                                    </asp:Label>
-                                </td>--%>
+                                                    <td>
+                                                        <asp:Label ID="lblCity"
+                                                            runat="server"
+                                                            Text='<%#Eval("City") %>'>
+                                                        </asp:Label>
+                                                    </td>
                                                 </tr>
                                             </table>
                                         </td>
