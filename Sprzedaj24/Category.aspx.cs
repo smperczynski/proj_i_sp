@@ -3,25 +3,45 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Sprzedaj24
 {
     public partial class Category : Page
     {
         public static string db = ConfigurationManager.ConnectionStrings["db_Sprzedaj24"].ConnectionString;
-        String id;
+        string id = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            id = Request.QueryString["Id"];
+            id = Request.QueryString["id"];
 
-            if (String.IsNullOrEmpty(id) || Int32.Parse(id) < 1)
+            switch (id)
             {
-                Response.Redirect("ErrorPage.aspx");
-            }
-            else if (Int32.Parse(id) > 0)
-            {
-                LoadBreadCrumbs();
-                ShowAdvertisements();
+                case "own":
+                    if (Session["UserId"] != null)
+                    {
+
+                        ddCategoriesSwitch.Visible = true;
+                        ShowAdvertisements(Int32.Parse(Session["UserId"].ToString()), ddCategoriesSwitch.SelectedValue);
+                    }
+                    else
+                    {
+                        Response.Redirect("ErrorPage.aspx");
+                    }
+                    break;
+
+                default:
+                    if (!string.IsNullOrEmpty(id) && Int32.Parse(id) > 0)
+                    {
+                        LoadBreadCrumbs();
+                        ShowAdvertisements();
+                        btnNoweOgl.Visible = true;
+                    }
+                    else
+                    {
+                        Response.Redirect("ErrorPage.aspx");
+                    }
+                    break;
             }
         }
 
@@ -65,21 +85,51 @@ namespace Sprzedaj24
             }
         }
 
-        protected void ShowAdvertisements()
+        protected void ShowAdvertisements(int userId = 0, string menuId = "")
         {
             SqlConnection conn = new SqlConnection(db);
             DataSet ds = new DataSet();
+            string query = "";
 
             try
             {
-                string query = @"SELECT a.Title, a.Description, a.PhoneNumber, a.City, '/Upload/' + ap.PhotoPath AS PhotoPath
-                                 FROM Advertisements a
-                                 JOIN AdvertisementsPhotos ap ON a.AdvertisementId = ap.AdvertisementId
-                                 WHERE a.CategoryId = @CategoryId AND ap.PhotoNumber = 1
-                                 ORDER BY Created DESC";
+                if (userId != 0)
+                {
+                    query = @"DECLARE @Menu TABLE (CategoryId int)
+                              INSERT INTO @Menu 
+                              SELECT m2.MenuId AS CategoryId
+                              FROM Menu m
+                              JOIN Menu m2 ON m.MenuId = m2.ParentId
+                              WHERE m.ParentId = @menuid
+
+                              SELECT a.AdvertisementId, 1 AS Edit, a.CategoryId, a.Title, a.Description, a.PhoneNumber, a.City, '/Upload/' + ap.PhotoPath AS PhotoPath
+                              FROM Advertisements a
+                              JOIN @Menu m ON a.CategoryId = m.CategoryId
+                              LEFT JOIN AdvertisementsPhotos ap ON a.AdvertisementId = ap.AdvertisementId
+                              WHERE a.UserId = @UserId AND ap.PhotoNumber = 1
+                              ORDER BY Created DESC";
+                }
+                else
+                {
+                    query = @"DECLARE @Edit int = 0;
+                              IF (@Admin = 1)
+                              BEGIN
+                              SET @Edit = 1;
+                              END
+
+                              SELECT a.AdvertisementId, @Edit AS Edit, a.CategoryId, a.Title, a.Description, a.PhoneNumber, a.City, '/Upload/' + ap.PhotoPath AS PhotoPath
+                              FROM Advertisements a
+                              LEFT JOIN AdvertisementsPhotos ap ON a.AdvertisementId = ap.AdvertisementId
+                              WHERE a.CategoryId = @CategoryId AND ap.PhotoNumber = 1
+                              ORDER BY Created DESC";
+                }
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CategoryId", id);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                cmd.Parameters.AddWithValue("@MenuId", menuId);
+                cmd.Parameters.AddWithValue("@Admin", Session["TypeId"] ?? 0);
+
                 SqlDataAdapter ad = new SqlDataAdapter();
                 ad.SelectCommand = cmd;
                 ad.Fill(ds);
@@ -97,9 +147,39 @@ namespace Sprzedaj24
             }
         }
 
+        protected void ddCategoriesSwitch_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                SqlConnection conn = new SqlConnection(db);
+                DataSet ds = new DataSet();
+
+                try
+                {
+                    string query = @"SELECT MenuId, Name FROM Menu WHERE ParentId IS NULL ORDER BY Name";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter ad = new SqlDataAdapter();
+                    ad.SelectCommand = cmd;
+                    ad.Fill(ds);
+
+                    ddCategoriesSwitch.DataSource = ds;
+                    ddCategoriesSwitch.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         protected void btnNoweOgl_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"~/NewAdv.aspx?id={Int32.Parse(id)}");
+            Response.Redirect($"~/Adv.aspx?go=new&id={Int32.Parse(id)}");
         }
     }
 }
