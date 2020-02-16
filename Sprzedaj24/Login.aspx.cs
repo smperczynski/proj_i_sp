@@ -68,7 +68,7 @@ namespace Sprzedaj24
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["db_Sprzedaj24"].ToString());
             conn.Open();
 
-            string query = @"SELECT UserId, Login, SSH, Salt FROM Users WHERE Login = @UserName";
+            string query = @"SELECT UserId, TypeId, Login, SSH, Salt FROM Users WHERE Login = @UserName";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@UserName", SqlDbType.VarChar).Value = userName;
             cmd.ExecuteNonQuery();
@@ -79,7 +79,7 @@ namespace Sprzedaj24
 
             if (dt.Rows.Count == 0)
             {
-                lblError.Text = "Nieprawidłowa Name użytkownika lub hasło";
+                lblError.Text = "Nieprawidłowa nazwa użytkownika lub hasło";
                 lblError.Visible = true;
                 return;
             }
@@ -89,6 +89,7 @@ namespace Sprzedaj24
                 string hashedPassword = dt.Rows[0]["SSH"].ToString();
                 string salt = dt.Rows[0]["Salt"].ToString();
                 int userId = Int32.Parse(dt.Rows[0]["UserId"].ToString());
+                int typeId = Int32.Parse(dt.Rows[0]["TypeId"].ToString());
                 byte[] passwordAndSalt = Encoding.UTF8.GetBytes(userPassword + salt);
                 byte[] hashPass = new SHA256Managed().ComputeHash(passwordAndSalt);
                 string hashCode = Convert.ToBase64String(hashPass);
@@ -96,11 +97,12 @@ namespace Sprzedaj24
                 {
                     Session["Login"] = userName.ToString();
                     Session["UserId"] = userId;
+                    Session["TypeId"] = typeId;
                     isLoggedIn = true;
                 }
                 else
                 {
-                    lblError.Text = "Nieprawidłowa Name użytkownika lub hasło";
+                    lblError.Text = "Nieprawidłowa nazwa użytkownika lub hasło";
                     lblError.Visible = true;
                 }
             }
