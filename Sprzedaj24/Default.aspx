@@ -5,16 +5,24 @@
     <asp:Panel ID="ResultsPanel" runat="server">
         <br>
 
-        <div class="row">
-            <div class="container">
-                <div class="form-group">
-                    <input type="text" class="form-control input-lg col-md-12" placeholder="Search">
-                </div>
-                <button type="submit">
-                    <span class="glyphicon glyphicon-search"></span>
-                </button>
+        <div>
+            <div style="float: left;">
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" Width="300px" placeholder="Wyszukaj przedmiot..."></asp:TextBox>
+            </div>
+
+            <div style="float: left;">
+                <asp:DropDownList ID="ddCategoriesSwitch" DataValueField="MenuId" DataTextField="Path"
+                    CssClass="form-control" AutoPostBack="False" Style="float: right; margin-left: 5px" OnLoad="ddCategoriesSwitch_Load" runat="server">
+                </asp:DropDownList>
+            </div>
+            <asp:Button ID="btnSearch" runat="server" Style="margin-left: 5px" CssClass="btn btn-default" Text="Szukaj" OnClick="btnSearch_Click" />
+            <div style="clear: both">
             </div>
         </div>
+
+        <br>
+        <br>
+
         <div class="row">
             <div class="col-md-3">
                 <h4>MOTORYZACJA</h4>
