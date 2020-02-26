@@ -84,5 +84,54 @@ namespace Sprzedaj24
                 }
             }
         }
+
+        protected void ddCategoriesSwitch_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                SqlConnection conn = new SqlConnection(db);
+                DataSet ds = new DataSet();
+
+                try
+                {
+                    string query = @"SELECT '- Wszystkie kategorie -' Path, -1 MenuId
+                                     UNION
+                                     SELECT UPPER(m3.Name) +' / '
+                                     + UPPER(m2.Name) + ' / '
+                                     + UPPER(m1.Name) AS Path,
+                                     UPPER(m1.menuid) AS MenuId
+                                     FROM
+                                     menu m1
+                                     JOIN menu m2 ON m1.ParentId = m2.MenuId
+                                     JOIN menu m3 ON m2.ParentId = m3.MenuId
+                                     ORDER BY Path";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter ad = new SqlDataAdapter();
+                    ad.SelectCommand = cmd;
+                    ad.Fill(ds);
+
+                    ddCategoriesSwitch.DataSource = ds;
+                    ddCategoriesSwitch.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (ddCategoriesSwitch.SelectedValue == "-1")
+            {
+                Response.Redirect($"Category.aspx?search={txtSearch.Text}");
+            }
+            Response.Redirect($"Category.aspx?id={ddCategoriesSwitch.SelectedValue}&search={txtSearch.Text}");
+        }
     }
 }

@@ -11,37 +11,48 @@ namespace Sprzedaj24
     {
         public static string db = ConfigurationManager.ConnectionStrings["db_Sprzedaj24"].ConnectionString;
         string id = "";
+        string search = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             id = Request.QueryString["id"];
+            search = Request.QueryString["search"];
 
-            switch (id)
+            if (!string.IsNullOrEmpty(id))
             {
-                case "own":
-                    if (Session["UserId"] != null)
-                    {
 
-                        ddCategoriesSwitch.Visible = true;
-                        ShowAdvertisements(Int32.Parse(Session["UserId"].ToString()), ddCategoriesSwitch.SelectedValue);
-                    }
-                    else
-                    {
-                        Response.Redirect("ErrorPage.aspx");
-                    }
-                    break;
+                switch (id)
+                {
+                    case "own":
+                        if (Session["UserId"] != null)
+                        {
 
-                default:
-                    if (!string.IsNullOrEmpty(id) && Int32.Parse(id) > 0)
-                    {
-                        LoadBreadCrumbs();
-                        ShowAdvertisements();
-                        btnNoweOgl.Visible = true;
-                    }
-                    else
-                    {
-                        Response.Redirect("ErrorPage.aspx");
-                    }
-                    break;
+                            ddCategoriesSwitch.Visible = true;
+                            ShowAdvertisements(Int32.Parse(Session["UserId"].ToString()), ddCategoriesSwitch.SelectedValue);
+                        }
+                        else
+                        {
+                            Response.Redirect("ErrorPage.aspx");
+                        }
+                        break;
+
+                    default:
+                        if (!string.IsNullOrEmpty(id) && Int32.Parse(id) > 0)
+                        {
+                            LoadBreadCrumbs();
+                            ShowAdvertisements(0,id);
+                            btnNoweOgl.Visible = true;
+                        }
+                        else
+                        {
+                            Response.Redirect("ErrorPage.aspx");
+                        }
+                        break;
+                }
+            }
+            else if (!string.IsNullOrEmpty(search) && string.IsNullOrEmpty(id))
+            {
+                ShowAdvertisements(0,"",true);
             }
         }
 
@@ -85,11 +96,17 @@ namespace Sprzedaj24
             }
         }
 
-        protected void ShowAdvertisements(int userId = 0, string menuId = "")
+        protected void ShowAdvertisements(int userId = 0, string menuId = "", bool isSearch = false)
         {
             SqlConnection conn = new SqlConnection(db);
             DataSet ds = new DataSet();
             string query = "";
+            string querySearch = "";
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                querySearch = $" AND a.Title LIKE '%'+ @Search + '%' ";
+            }
 
             try
             {
@@ -109,9 +126,25 @@ namespace Sprzedaj24
                               WHERE a.UserId = @UserId AND ap.PhotoNumber = 1
                               ORDER BY Created DESC";
                 }
-                else
+                else if (!string.IsNullOrEmpty(menuId))
                 {
-                    query = @"DECLARE @Edit int = 0;
+                    query = $@"DECLARE @Edit int = 0;
+                               IF (@Admin = 1)
+                               BEGIN
+                               SET @Edit = 1;
+                               END
+                               
+                               SELECT a.AdvertisementId, @Edit AS Edit, a.CategoryId, a.Title, a.Description, a.PhoneNumber, a.City, '/Upload/' + ap.PhotoPath AS PhotoPath
+                               FROM Advertisements a
+                               LEFT JOIN AdvertisementsPhotos ap ON a.AdvertisementId = ap.AdvertisementId
+                               WHERE a.CategoryId = @CategoryId 
+                               AND ap.PhotoNumber = 1
+                               {querySearch}
+                               ORDER BY Created DESC";
+                }
+                else if (isSearch && menuId == "")
+                {
+                    query = $@"DECLARE @Edit int = 0;
                               IF (@Admin = 1)
                               BEGIN
                               SET @Edit = 1;
@@ -120,15 +153,17 @@ namespace Sprzedaj24
                               SELECT a.AdvertisementId, @Edit AS Edit, a.CategoryId, a.Title, a.Description, a.PhoneNumber, a.City, '/Upload/' + ap.PhotoPath AS PhotoPath
                               FROM Advertisements a
                               LEFT JOIN AdvertisementsPhotos ap ON a.AdvertisementId = ap.AdvertisementId
-                              WHERE a.CategoryId = @CategoryId AND ap.PhotoNumber = 1
+                              WHERE ap.PhotoNumber = 1
+                              AND a.Title LIKE '%'+ @Search + '%'
                               ORDER BY Created DESC";
                 }
 
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@CategoryId", id);
+                cmd.Parameters.AddWithValue("@CategoryId", id ?? "");
                 cmd.Parameters.AddWithValue("@UserId", userId);
-                cmd.Parameters.AddWithValue("@MenuId", menuId);
+                cmd.Parameters.AddWithValue("@MenuId", menuId ?? "");
                 cmd.Parameters.AddWithValue("@Admin", Session["TypeId"] ?? 0);
+                cmd.Parameters.AddWithValue("@Search", search ?? "");
 
                 SqlDataAdapter ad = new SqlDataAdapter();
                 ad.SelectCommand = cmd;
