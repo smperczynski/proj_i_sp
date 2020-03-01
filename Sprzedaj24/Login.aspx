@@ -29,7 +29,7 @@
 
                 <div id="divRegister" runat="server" visible="false">
                     E-mail:
-                    <asp:TextBox ID="tbxEmail" TextMode="Email" ValidationGroup="vgEmail" class="form-control" runat="server" />
+                    <asp:TextBox ID="tbxEmail" TextMode="Email" ValidationGroup="vgLogin" class="form-control" runat="server" />
                     <asp:RequiredFieldValidator ID="valEmail"
                         ControlToValidate="tbxEmail" ForeColor="Red"
                         ValidationGroup="vgLogin" Font-Size="X-Small"
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <asp:Label ID="lbWarning" runat="server" Visible="false" />
+    <asp:Label ID="lblWarning" runat="server" Visible="false" />
 
     <br>
     <br>

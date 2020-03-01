@@ -40,6 +40,15 @@ namespace Sprzedaj24 {
         protected global::System.Web.UI.WebControls.TextBox tbxTitle;
         
         /// <summary>
+        /// valTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valTitle;
+        
+        /// <summary>
         /// tbxDescription control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace Sprzedaj24 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxDescription;
+        
+        /// <summary>
+        /// valDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valDescription;
         
         /// <summary>
         /// tbxCity control.
@@ -58,6 +76,15 @@ namespace Sprzedaj24 {
         protected global::System.Web.UI.WebControls.TextBox tbxCity;
         
         /// <summary>
+        /// valCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valCity;
+        
+        /// <summary>
         /// tbxPhoneNumber control.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,15 @@ namespace Sprzedaj24 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxPhoneNumber;
+        
+        /// <summary>
+        /// valPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valPhoneNumber;
         
         /// <summary>
         /// FileUploadControl control.
@@ -236,23 +272,5 @@ namespace Sprzedaj24 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// LinkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-        
-        /// <summary>
-        /// LinkButton2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
     }
 }

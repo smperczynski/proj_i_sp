@@ -114,8 +114,9 @@ namespace Sprzedaj24
                             {
                                 if (CheckUserPermissions(userLogin, advertisementId) || Session["TypeId"].ToString() == "1")
                                 {
+
                                     divEdit.Visible = true;
-                                    LoadBreadCrumbs();
+                                    DeleteAdv(advertisementId);
                                 }
                             }
                         }
@@ -482,7 +483,32 @@ namespace Sprzedaj24
         }
         #endregion EditAdvertisement
 
+        #region DeleteAdvertisement
+        protected void DeleteAdv(int advId)
+        {
+            SqlConnection conn = new SqlConnection(db);
+            DataSet ds = new DataSet();
 
+            try
+            {
+                string query = @"DELETE FROM Advertisements WHERE AdvertisementId = @advertisementId";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@advertisementId", SqlDbType.Int).Value = advId;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+            }
+            finally
+            {
+                conn.Close();
+                Response.Redirect("Category.aspx?id=own", true);
+            }
+        }
+        #endregion DeleteAdvertisement
 
         #region ShowAdvertisement
         protected void ShowAdvertisement()

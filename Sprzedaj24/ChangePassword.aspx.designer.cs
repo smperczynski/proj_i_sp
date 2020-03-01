@@ -10,70 +10,61 @@
 namespace Sprzedaj24 {
     
     
-    public partial class Login {
+    public partial class EditProfile {
         
         /// <summary>
-        /// tbxLogin control.
+        /// tbxLast control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxLogin;
+        protected global::System.Web.UI.WebControls.TextBox tbxLast;
         
         /// <summary>
-        /// valLogin control.
+        /// valLast control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valLogin;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valLast;
         
         /// <summary>
-        /// tbxPassword control.
+        /// tbxNew1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxPassword;
+        protected global::System.Web.UI.WebControls.TextBox tbxNew1;
         
         /// <summary>
-        /// valPassword control.
+        /// valNew1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valNew1;
         
         /// <summary>
-        /// divRegister control.
+        /// tbxNew2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divRegister;
+        protected global::System.Web.UI.WebControls.TextBox tbxNew2;
         
         /// <summary>
-        /// tbxEmail control.
+        /// valNew2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEmail;
-        
-        /// <summary>
-        /// valEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valNew2;
         
         /// <summary>
         /// lblError control.
@@ -85,22 +76,13 @@ namespace Sprzedaj24 {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// btnLogin control.
+        /// btnPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
-        
-        /// <summary>
-        /// hlReg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor hlReg;
+        protected global::System.Web.UI.WebControls.Button btnPassword;
         
         /// <summary>
         /// lblWarning control.

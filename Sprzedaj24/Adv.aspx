@@ -102,25 +102,50 @@
                 <tr>
                     <td style="padding: 20px">Tytuł:</td>
                     <td>
-                        <asp:TextBox ID="tbxTitle" CssClass="form-control" Width="500px" runat="server" />
+                        <asp:TextBox ID="tbxTitle" CssClass="form-control" ValidationGroup="vgAdv" Width="500px" runat="server" />
+                        <asp:RequiredFieldValidator ID="valTitle"
+                            ControlToValidate="tbxTitle" ForeColor="Red"
+                            ValidationGroup="vgAdv" Font-Size="X-Small"
+                            ErrorMessage="Wprowadź tytuł"
+                            runat="server">
+                        </asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding: 20px">Opis:</td>
                     <td>
-                        <asp:TextBox ID="tbxDescription" runat="server" CssClass="form-control" Height="100px" Width="500px" TextMode="MultiLine" />
+                        <asp:TextBox ID="tbxDescription" runat="server" ValidationGroup="vgAdv" MaxLength="300" CssClass="form-control"
+                            Height="100px" Width="500px" TextMode="MultiLine" placeholder="Maks. 300 znaków" />
+                        <asp:RequiredFieldValidator ID="valDescription"
+                            ControlToValidate="tbxDescription" ForeColor="Red"
+                            ValidationGroup="vgAdv" Font-Size="X-Small"
+                            ErrorMessage="Wprowadź opis"
+                            runat="server">
+                        </asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding: 20px">Miejscowość:</td>
                     <td>
-                        <asp:TextBox ID="tbxCity" CssClass="form-control" Width="500px" runat="server" />
+                        <asp:TextBox ID="tbxCity" CssClass="form-control" ValidationGroup="vgAdv" Width="500px" runat="server" />
+                        <asp:RequiredFieldValidator ID="valCity"
+                            ControlToValidate="tbxCity" ForeColor="Red"
+                            ValidationGroup="vgAdv" Font-Size="X-Small"
+                            ErrorMessage="Wprowadź miejscowość"
+                            runat="server">
+                        </asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding: 20px">Nr telefonu:</td>
                     <td>
-                        <asp:TextBox ID="tbxPhoneNumber" CssClass="form-control" MaxLength="10" Width="500px" runat="server" />
+                        <asp:TextBox ID="tbxPhoneNumber" CssClass="form-control" TextMode="Number" ValidationGroup="vgAdv" MaxLength="10" Width="500px" runat="server" />
+                        <asp:RequiredFieldValidator ID="valPhoneNumber"
+                            ControlToValidate="tbxPhoneNumber" ForeColor="Red"
+                            ValidationGroup="vgAdv" Font-Size="X-Small"
+                            ErrorMessage="Wprowadź numer telefonu"
+                            runat="server">
+                        </asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -141,9 +166,9 @@
             <asp:Label ID="lblError" runat="server" ForeColor="Red" ClientIDMode="Static" />
             <br>
             <br>
-            <asp:LinkButton ID="btnSaveAdv" runat="server" Visible="false" OnClick="btnSaveAdv_Click" CssClass="btn btn-success">Wyślij ogłoszenie<span aria-hidden="true"></span>
+            <asp:LinkButton ID="btnSaveAdv" runat="server" Visible="false" OnClick="btnSaveAdv_Click" ValidationGroup="vgAdv" CssClass="btn btn-success">Wyślij ogłoszenie<span aria-hidden="true"></span>
             </asp:LinkButton>
-            <asp:LinkButton ID="btnEditAdv" runat="server" Visible="false" OnClick="btnEditAdv_Click" CssClass="btn btn-success">Zapisz zmiany<span aria-hidden="true"></span>
+            <asp:LinkButton ID="btnEditAdv" runat="server" Visible="false" OnClick="btnEditAdv_Click" ValidationGroup="vgAdv" CssClass="btn btn-success">Zapisz zmiany<span aria-hidden="true"></span>
             </asp:LinkButton>
         </div>
     </div>
@@ -182,12 +207,6 @@
             <br>
             <br>
             <asp:Label ID="Label3" runat="server" ForeColor="Red" ClientIDMode="Static" />
-            <br>
-            <br>
-            <asp:LinkButton ID="LinkButton1" runat="server" Visible="false" OnClick="btnSaveAdv_Click" CssClass="btn btn-success">Wyślij ogłoszenie<span aria-hidden="true"></span>
-            </asp:LinkButton>
-            <asp:LinkButton ID="LinkButton2" runat="server" Visible="false" OnClick="btnEditAdv_Click" CssClass="btn btn-success">Zapisz zmiany<span aria-hidden="true"></span>
-            </asp:LinkButton>
         </div>
     </div>
 

@@ -58,8 +58,9 @@
                             <div id="divAccount" visible="false" runat="server" class="dropdown">
                                 <button id="ddLogin" runat="server" class="btn btn-default dropdown-toggle" style="padding: 15px" type="button" data-toggle="dropdown"></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="Category?id=own"><span class="glyphicon glyphicon-book"></span>&nbsp Twoje ogłoszenia</a></li>
-                                    <li><a href="EditProfile.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp Edytuj dane</a></li>
+                                    <li><a href="Admin.aspx?go=list" id="hlAdmin" visible="false" runat="server"><span class="glyphicon glyphicon-briefcase"></span>&nbsp Administracja</a></li>
+                                    <li><a href="Category.aspx?id=own"><span class="glyphicon glyphicon-book"></span>&nbsp Zarządzaj ogłoszeniami</a></li>
+                                    <li><a href="ChangePassword.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp Zmień hasło</a></li>
                                     <li class="divider"></li>
                                     <li><a href="Logout.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp Wyloguj</a></li>
                                 </ul>

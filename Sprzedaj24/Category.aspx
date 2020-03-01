@@ -22,6 +22,8 @@
             <span aria-hidden="true" class="glyphicon glyphicon-plus"></span> Dodaj ogłoszenie
             </asp:LinkButton>
 
+            <asp:Label ID="lblInfo" runat="server" Visible="false"></asp:Label>
+
             <asp:DropDownList ID="ddCategoriesSwitch" Visible="false" DataValueField="MenuId" DataTextField="Name"
                 CssClass="form-control" AutoPostBack="True" Style="float: right" OnLoad="ddCategoriesSwitch_Load"
                 runat="server">
@@ -100,11 +102,11 @@
                                                 </tr>
                                                 <tr>
                                                     <div style="float: right; vertical-align: middle">
-                                                        <asp:HyperLink ID="btnAdvShow" Text="Pokaż" runat="server" Style="width: 60px" CssClass="advBtn btn btn btn-default btn-sm" NavigateUrl='<%# "Adv?go=show&id=" + Eval("CategoryId") + "&a=" + Eval("AdvertisementId")%>' />
+                                                        <asp:HyperLink ID="hlAdvShow" Text="Pokaż" runat="server" Style="width: 60px" CssClass="advBtn btn btn btn-default btn-sm" NavigateUrl='<%# "Adv?go=show&id=" + Eval("CategoryId") + "&a=" + Eval("AdvertisementId")%>' />
                                                         <br />
-                                                        <asp:HyperLink ID="btnAdvEdit" ClientIDMode="Static" Visible='<%# ((int)Eval("Edit") == 1) ? true : false %>' Text="Edytuj" runat="server" Style="width: 60px" CssClass="advBtn btn btn btn-success btn-sm" NavigateUrl='<%# "Adv?go=edit&id=" + Eval("CategoryId") + "&a=" + Eval("AdvertisementId")%>' />
+                                                        <asp:HyperLink ID="hlAdvEdit" ClientIDMode="Static" Visible='<%# ((int)Eval("Edit") == 1) ? true : false %>' Text="Edytuj" runat="server" Style="width: 60px" CssClass="advBtn btn btn btn-success btn-sm" NavigateUrl='<%# "Adv?go=edit&id=" + Eval("CategoryId") + "&a=" + Eval("AdvertisementId")%>' />
                                                         <br />                         
-                                                        <asp:HyperLink ID="btnAdvDel" ClientIDMode="Static" Visible='<%# ((int)Eval("Edit") == 1) ? true : false %>' Text="Usuń" runat="server" Style="width: 60px" CssClass="advBtn btn btn btn-danger btn-sm" NavigateUrl='<%# "Adv?go=del&id=" + Eval("CategoryId") + "&a=" + Eval("AdvertisementId")%>' onclick="return confirm('Czy na pewno chcesz usunąć ogłoszenie?')" />
+                                                        <asp:HyperLink ID="hlAdvDel" ClientIDMode="Static" Visible='<%# ((int)Eval("Edit") == 1) ? true : false %>' Text="Usuń" runat="server" Style="width: 60px" CssClass="advBtn btn btn btn-danger btn-sm" NavigateUrl='<%# "Adv?go=del&id=" + Eval("CategoryId") + "&a=" + Eval("AdvertisementId")%>' onclick="return confirm('Czy na pewno chcesz usunąć ogłoszenie?')" />
                                                     </div>
                                                 </tr>
                                             </table>

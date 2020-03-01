@@ -36,9 +36,40 @@ namespace Sprzedaj24
             }
         }
 
+        protected bool CheckIfLoginExists(string login)
+        {
+            bool loginExists = false;
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["db_Sprzedaj24"].ToString());
+            conn.Open();
+
+            string query = @"SELECT Login FROM Users WHERE Login = @login";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@login", SqlDbType.VarChar).Value = login;
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                lblError.Text = "Login już istnieje w bazie";
+                lblError.Visible = true;
+                loginExists = true;
+            }
+            return loginExists;
+        }
+
         protected void NewUserRegistration()
         {
+            if (CheckIfLoginExists(tbxLogin.Text)) return;
+
             GenerateHash HashAndSalt = new GenerateHash();
+            string GetSalt = HashAndSalt.CreateSalt(10);
+            string hashString = HashAndSalt.GenarateHash(tbxPassword.Text, GetSalt);
+            string username = tbxLogin.Text;
+            string email = tbxEmail.Text;
 
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["db_Sprzedaj24"].ConnectionString))
             {
@@ -48,10 +79,10 @@ namespace Sprzedaj24
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = tbxLogin.Text;
-                    cmd.Parameters.Add("@PasswordHashed", SqlDbType.VarChar).Value = HashAndSalt.GenarateHash(tbxPassword.Text, HashAndSalt.CreateSalt(10));
-                    cmd.Parameters.Add("@Salt", SqlDbType.VarChar).Value = HashAndSalt.CreateSalt(10);
-                    cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = tbxEmail.Text;
+                    cmd.Parameters.AddWithValue("@UserName", username);
+                    cmd.Parameters.AddWithValue("@PasswordHashed", hashString);
+                    cmd.Parameters.AddWithValue("@Salt", GetSalt);
+                    cmd.Parameters.AddWithValue("@Email", email);
                     cmd.ExecuteNonQuery();
                 }
             }

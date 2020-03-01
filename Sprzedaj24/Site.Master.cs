@@ -15,6 +15,11 @@ namespace Sprzedaj24
         {
             if (!string.IsNullOrEmpty(userLogin))
             {
+                if (Session["TypeId"].ToString() == "1")
+                {
+                    hlAdmin.Visible = true;
+                }
+
                 ddLogin.InnerHtml = $"Zalogowany jako: <b>{userLogin}</b> <span class='caret'/>";
                 hlLogin.Visible = false;
                 divAccount.Visible = true;
