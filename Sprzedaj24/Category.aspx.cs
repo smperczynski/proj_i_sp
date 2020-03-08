@@ -52,6 +52,8 @@ namespace Sprzedaj24
             }
             else if (!string.IsNullOrEmpty(search) && string.IsNullOrEmpty(id))
             {
+                lblSearch.Text = $"<b>Wyświetlam wyniki dla frazy:</b><br>{search}";
+                lblSearch.Visible = true;
                 ShowAdvertisements(0,"",true);
             }
         }
@@ -150,7 +152,8 @@ namespace Sprzedaj24
                               SET @Edit = 1;
                               END
 
-                              SELECT a.AdvertisementId, @Edit AS Edit, a.CategoryId, a.Title, a.Description, a.PhoneNumber, a.City, '/Upload/' + ap.PhotoPath AS PhotoPath
+                              SELECT a.AdvertisementId, @Edit AS Edit, a.CategoryId, a.Title, a.Description, 
+                              a.PhoneNumber, a.City, '/Upload/' + ap.PhotoPath AS PhotoPath
                               FROM Advertisements a
                               LEFT JOIN AdvertisementsPhotos ap ON a.AdvertisementId = ap.AdvertisementId
                               WHERE ap.PhotoNumber = 1

@@ -13,7 +13,7 @@
                 <asp:RequiredFieldValidator ID="valLast"
                     ControlToValidate="tbxLast" ForeColor="Red" Display="Dynamic"
                     ValidationGroup="vgPassword" Font-Size="X-Small"
-                    ErrorMessage="Wprowadź login"
+                    ErrorMessage="Wprowadź aktualne hasło"
                     runat="server">
                 </asp:RequiredFieldValidator>
                 <br>

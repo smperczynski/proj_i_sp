@@ -185,19 +185,19 @@
             </center>
             <br>
             <br>
-            Opis 
+            <h4><b>Opis</b></h4>
             <br>
-            <asp:Label ID="lblDescription" Font-Size="Large" runat="server" />
-            <br>
-            <br>
-            Miejscowość 
-            <br>
-            <asp:Label ID="lblCity" Font-Size="Large" runat="server" />
+            <asp:Label ID="lblDescription" Font-Size="Large" Style="padding-bottom: 20px" runat="server" />
             <br>
             <br>
-            Telefon 
+            <h4><b>Miejscowość</b></h4>
             <br>
-            <asp:Label ID="lblPhoneNumber" Font-Size="Large" runat="server" />
+            <asp:Label ID="lblCity" Font-Size="Large" Style="padding-bottom: 20px"  runat="server" />
+            <br>
+            <br>
+            <h4><b>Telefon</b></h4>
+            <br>
+            <asp:Label ID="lblPhoneNumber" Font-Size="Large" Style="padding-bottom: 20px"  runat="server" />
             <br>
             <center>
             <asp:Image ID="imgPrvUpload1" Height="500px" runat="server" Style="border-radius: 5px;" ClientIDMode="Static"></asp:Image>

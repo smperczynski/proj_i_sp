@@ -10,6 +10,8 @@
             margin: 5px;
         }
     </style>
+    <br><br>
+    <asp:Label ID="lblSearch" runat="server" Visible="false"></asp:Label>
 
     <div class="row">
         <div class="container" style="padding: 35px">

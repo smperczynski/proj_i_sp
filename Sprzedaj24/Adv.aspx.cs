@@ -143,7 +143,7 @@ namespace Sprzedaj24
             {
                 string query = @"SELECT u.UserId FROM dbo.Users u
                                  JOIN Advertisements a ON a.UserId = u.UserId
-                                 WHERE u.UserId = @UserLogin AND AdvertisementId = @AdvertisementId";
+                                 WHERE u.Login = @UserLogin AND AdvertisementId = @AdvertisementId";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@userLogin", userLogin);
